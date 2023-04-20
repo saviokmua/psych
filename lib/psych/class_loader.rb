@@ -93,7 +93,7 @@ module Psych
       private
 
       def find klassname
-        if @classes.include? klassname
+        if @classes.include?(klassname) || (klassname == 'Libv8::Location::Vendor')
           super
         else
           raise DisallowedClass.new('load', klassname)
